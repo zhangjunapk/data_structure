@@ -1,5 +1,7 @@
 package queue;
 
+import java.util.LinkedList;
+
 public class Content {
     public static void main(String[] args) {
         Queue<String> queue=new Queue<>();
@@ -13,8 +15,17 @@ public class Content {
         node1.val="b";
         queue.push(node1);
 
+        String val = queue.pull().val;
+        System.out.println(val);
+        String val1 = queue.pull().val;
+        System.out.println(val1);
+        System.out.println(queue.pull().val);
+
+
         while(queue.hasNext()){
             System.out.println(queue.next().val);
         }
+
+
     }
 }
