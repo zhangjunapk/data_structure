@@ -7,13 +7,13 @@ public class HashMap<K,V> {
     public void put(K k,V v){
         Node<K,V> node=first;
         //如果第一个节点的key和传过来的一致,那就设置值进去
-        if(first.getKey()!=null&&first.getKey().equals(k)){
+        if(first.getKey()!=null&&first.getKey().hashCode()==k.hashCode()){
             first.setValue(v);
             return;
         }
         //不断遍历下一个，如果key一致，就放值进去
         while((node=node.next)!=null){
-            if(node.getKey().equals(k)){
+            if(node.getKey().hashCode()==k.hashCode()){
                 node.setValue(v);
                 return;
             }
@@ -28,12 +28,12 @@ public class HashMap<K,V> {
 
     public V get(K k){
         Node<K,V> node=first;
-        if(first.getKey()!=null&&first.getKey().equals(k)){
+        if(first.getKey()!=null&&first.getKey().hashCode()==k.hashCode()){
             return first.getValue();
         }
 
         while((node=node.next)!=null){
-            if(node.getKey().equals(k)){
+            if(node.getKey().hashCode()==k.hashCode()){
                 return node.getValue();
             }
         }
