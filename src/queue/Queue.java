@@ -1,7 +1,7 @@
 package queue;
 
 /**
- * 队列简单模拟
+ * 队列简单模拟 先进先出
  * @author 张君
  */
 public class Queue<T> {
